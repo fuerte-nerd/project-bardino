@@ -1,0 +1,363 @@
+$primary: #f07937;
+$secondary: #52bbb4;
+$light: lighten($primary, 41%);
+$success: #24994b;
+
+$body-bg: darken($secondary, 15%);
+$body-color: $light;
+// $font-size-base: 1.4rem;
+$font-family-sans-serif: "Spartan";
+$headings-font-family: "Comfortaa";
+
+$link-hover-decoration: none;
+
+$navbar-dark-color: rgba($light, 0.75);
+$navbar-dark-hover-color: rgba($primary, 0.9);
+$navbar-dark-active-color: $light;
+$navbar-nav-link-padding-x: 1.25rem;
+
+$btn-padding-y-lg: 1rem;
+$btn-padding-x-lg: 1rem;
+$navbar-padding-y:  0rem;
+// $navbar-padding-x:  0rem;
+
+$my-font-base: 1.2rem;
+
+//Social colours
+$facebook: #3b5999;
+$instagram: #e4405f;
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+body{
+  background: linear-gradient(to bottom right, $body-bg, lighten($body-bg, 5%));
+  background-attachment: fixed;
+}
+
+
+table, p, h1, h2, h3, h4, h5 {
+  cursor: default;
+}
+
+.bg-dark-50 {
+  background: rgba($dark, 0.95);
+}
+
+.bg-light-transparent {
+  background: rgba($light, 0.8);
+}
+
+$trans-amount: .9;
+
+.bg{
+  &-primary-trans {
+    background: rgba($primary, $trans-amount);
+  }
+  &-dark-trans {
+    background: rgba($dark, $trans-amount);
+  }
+  &-light-trans {
+    background: rgba($light, $trans-amount);
+  }
+}
+
+.logo {
+  width: 4rem;
+}
+
+.content-separator {
+  margin-top: 6rem;
+  display: block;
+}
+
+.hero {
+  background: url("imgs/bg1.jpg");
+  background-size: cover;
+  background-position: center;
+
+  &-gradient-overlay {
+    background: linear-gradient(to bottom right, rgba($body-bg, .9), rgba(lighten($body-bg, 5%), .9));
+  }
+
+  &-content {
+    width: 100%;
+    z-index: 20;
+    &-wrapper {
+      width: 100%;
+      margin: 80px;
+    }
+  }
+
+  &-image {
+    width: 10.5rem;
+  }
+}
+
+.flag-icon-selected {
+  transition: all 0.2s;
+  &:hover {
+    transform: translateY(-0.2rem);
+  }
+}
+
+.social {
+  font-size: 2rem;
+  background: white;
+  margin: 0;
+  width: 3.75rem;
+  height: 3.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 0.15rem solid $light;
+  box-shadow: 0 0.2rem 0.3rem rgba($dark, 0.5);
+
+  &-sm {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.8rem;
+  }
+  &:active {
+    box-shadow: 0 0.1rem 0.2rem rgba($dark, 0.5);
+  }
+
+  &-facebook {
+    background: $facebook;
+    &:hover {
+      background: darken($facebook, 10%);
+    }
+  }
+
+  &-instagram {
+    background: $instagram;
+
+    &:hover {
+      background: darken($instagram, 10%);
+    }
+  }
+}
+
+$brand-colors: (
+	facebook: #3b5998,
+	twitter: #1da1f2,
+	googleplus: #dd4b39,
+	linkedin: #0077b5,
+	reddit: #ff4500,
+	whatsapp: #128c7e,
+);
+
+.post-social {
+  display: flex;
+  justify-content: center;
+	.button {
+    // margin: 0.5rem 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: .05rem solid $light;
+    &-small{
+      width: 2.2rem;
+      height: 2.2rem;
+      & i {
+        font-size: .85rem !important;
+      }
+    }
+    		// transition: all 300ms ease-out;
+		@each $class, $color in $brand-colors {
+			&.#{$class} {
+
+				background-color: $color !important;
+				color: $light;
+				&:hover {
+					background-color: darken($color, 10%) !important;
+					// border-color: $color;
+					// color: #fff;
+				}
+			}
+    }
+    .icon i{
+      font-size: 1rem;
+    }
+	}
+}
+
+.page-content p {
+  text-align: justify;
+}
+
+.extend-line-height{
+  line-height: 2rem;
+}
+
+.dog{
+  &-description{
+  line-height: 2rem;
+  }
+  &-gallery {
+    &-gallery:hover .dog-image:not(:hover){
+      opacity: .3;
+      transform: scale(0.95);
+    }
+    & img{
+      transition: all .2s;
+      &:hover{
+        transform: translateY(-.5rem);
+      }
+    }
+  } 
+}
+
+.articles{
+  &:hover{
+    & .article:not(:hover){
+      opacity: .3;
+      transform: scale(.975);
+    }
+  }
+}
+.time-in-care{
+  top: .25rem;
+  left: .25rem;
+}
+
+.nav-shrink {
+  width: 3rem !important;
+  // transform: scale(0.7);
+}
+
+.logo-width{
+  font-size: 3rem;
+}
+
+.navbar, .navbar-brand, .nav-link, .button {
+  transition: all 0.2s;
+}
+
+.navbar-dark .navbar-toggler,
+.navbar-light .navbar-toggler {
+  background: rgba($primary, 0.9);
+  // height: 3rem;
+  z-index: 500;
+  transition: all 0.2s;
+}
+
+.navbar-toggler-icon{
+  &-zero {
+    height: 2.5rem;
+  }
+}
+
+.nav-link, .dropdown-item {
+  font-size: 0.9rem;
+  margin-top: .2rem;
+  font-family: $headings-font-family;
+  font-weight: bold;
+  &-non-zero{
+    font-size: 0.8rem !important;
+  }
+}
+
+.dropdown-menu {
+  min-width: 12.5rem;
+}
+
+// nav.modal {
+//   // overflow: auto;
+// }
+body.modal-open{
+  padding-right: 0 !important;
+
+}
+.navbar{
+  padding-right: .5rem !important;
+  padding-left: .5rem !important;
+}
+
+.navbar-toggler{
+  margin: 0 !important;
+}
+
+.modal{
+  padding: 0 !important;
+}
+
+// .modal::-webkit-scrollbar {
+//   width: 0 !important; /*removes the scrollbar but still scrollable*/
+//   /* reference: http://stackoverflow.com/a/26500272/2259400 */
+// }
+
+.dogs:hover {
+  & .card:not(:hover) {
+    transform: scale(0.9);
+    opacity: 0.3;
+  }
+
+  & .card:hover {
+    transform: scale(1);
+  }
+}
+.card {
+  // transform: scale(.995);
+  transition: all 0.2s;
+}
+// .navbar-nav{
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+// }
+
+// $grid-breakpoints: (
+//   xs: 0,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px
+// ) !default;
+
+@media only screen and (orientation: landscape) and (max-width: 992px) {
+  .hero-image {
+    display: none;
+  }
+  .navbar .navbar-collapse {
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+}
+
+@media (min-width: 0px) {
+  html {
+    font-size: $my-font-base - 0.3 !important;
+  }
+  .hero-content-wrapper {
+    margin: 0;
+  }
+}
+
+@media (min-width: 576px) {
+  html {
+    font-size: $my-font-base - 0.25 !important;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: $my-font-base - 0.15 !important;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: $my-font-base - 0.05 !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: $my-font-base !important;
+  }
+}

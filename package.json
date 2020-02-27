@@ -1,0 +1,23 @@
+{
+  "name": "fdr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"nodemon server.js\" \"browser-sync start --proxy=localhost:7000 --files='**/*.css, **/*.ejs, **/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify\" \"node-sass styles.scss -o public/ -w\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "bootstrap": "^4.4.1",
+    "browser-sync": "^2.26.7",
+    "concurrently": "^5.1.0",
+    "node-sass": "^4.13.1",
+    "nodemon": "^2.0.2"
+  }
+}
